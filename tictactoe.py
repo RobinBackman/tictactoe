@@ -3,7 +3,6 @@ import os
 import time
 
 
-# Display the board
 def display_board():
     # 0 represents an empty slot
     # 1 is Player one (X)
@@ -26,9 +25,8 @@ def display_board():
  {} | {} | {}
     """.format(*internal_board))
 
-# Let player one or two choose a spot
 def choose_spot(spot, player):
-    if spot.isdigit():
+    if spot.isdigit() and int(spot) < 10:
         index = np.where(selection_board == int(spot))
 
         if board[index] == 0:
